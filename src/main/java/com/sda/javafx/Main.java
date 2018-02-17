@@ -27,7 +27,13 @@ public class Main extends Application {
 //    }
 
     public Main(){
-        personObservableList.add(new Person("Jan", "Kowalski"));
+
+        Person p1 = new Person("Marcin", "Kowalski");
+        p1.setCity("Torun");
+        p1.setStreet("Długa");
+        p1.setPostalcode("21-110");
+
+        personObservableList.add(p1);
         personObservableList.add(new Person("Jan", "Kowalski"));
         personObservableList.add(new Person("Jan", "Kowalski"));
         personObservableList.add(new Person("Jan", "Kowalski"));

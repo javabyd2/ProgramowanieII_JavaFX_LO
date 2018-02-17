@@ -50,6 +50,22 @@ public class Controller {
         lastnameColumn.setCellValueFactory(
                 data -> data.getValue().lastnameProperty()
         );
+
+        personTableView.getSelectionModel()
+                .selectedItemProperty()
+                .addListener( (observable, x, y)
+                        -> showPerson(y)
+                );
+
+    }
+
+    public void showPerson(Person person){
+        firstNameLabel.setText(person.getFirstname());
+        postalCodeLabel.setText(person.getPostalcode());
+        streetLabel.setText(person.getStreet());
+
+        System.out.println(person.getFirstname());
+        System.out.println("KLIKAM!!");
     }
 
 

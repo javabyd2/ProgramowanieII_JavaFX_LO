@@ -7,10 +7,10 @@ public class Person {
 
     private StringProperty firstname;
     private StringProperty lastname;
-    private StringProperty postalcode;
-    private StringProperty city;
-    private StringProperty birthday;
-    private StringProperty street;
+    private StringProperty postalcode = new SimpleStringProperty();
+    private StringProperty city = new SimpleStringProperty();
+    private StringProperty birthday = new SimpleStringProperty();
+    private StringProperty street = new SimpleStringProperty();
 
     public Person(String firstname, String lastname) {
         this.firstname = new SimpleStringProperty(firstname);
