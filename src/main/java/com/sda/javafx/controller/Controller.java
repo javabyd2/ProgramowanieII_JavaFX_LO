@@ -41,6 +41,18 @@ public class Controller {
     public Controller() {
     }
 
+
+    @FXML
+    private void initialize(){
+        firstnameColumn.setCellValueFactory(
+              data -> data.getValue().firstnameProperty()
+        );
+        lastnameColumn.setCellValueFactory(
+                data -> data.getValue().lastnameProperty()
+        );
+    }
+
+
     public void setMain(Main main){
         this.main = main;
         personTableView.setItems(main.getPerson());
