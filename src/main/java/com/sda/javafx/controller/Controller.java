@@ -1,5 +1,6 @@
 package com.sda.javafx.controller;
 
+import com.sda.javafx.Main;
 import com.sda.javafx.model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -33,6 +34,16 @@ public class Controller {
     @FXML
     private Label birthdayLabel;
 
+    //referencja klasy main
+    private Main main;
 
+
+    public Controller() {
+    }
+
+    public void setMain(Main main){
+        this.main = main;
+        personTableView.setItems(main.getPerson());
+    }
 
 }
