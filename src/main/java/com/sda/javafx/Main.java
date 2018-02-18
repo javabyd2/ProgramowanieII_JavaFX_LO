@@ -1,13 +1,11 @@
 package com.sda.javafx;
 
-import com.sda.javafx.controller.Controller;
+import com.sda.javafx.controller.MainController;
 import com.sda.javafx.model.Person;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -65,6 +63,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public void showPersonLayout() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(
@@ -75,7 +74,7 @@ public class Main extends Application {
         rootLayout.setCenter(person);
 
 
-        Controller controller = loader.getController();
+        MainController controller = loader.getController();
         controller.setMain(this);
     }
 

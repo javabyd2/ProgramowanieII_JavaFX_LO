@@ -17,7 +17,7 @@ import javax.swing.text.TabableView;
 import java.io.IOException;
 
 
-public class Controller {
+public class MainController {
 
     @FXML
     private TableView<Person> personTableView;
@@ -45,7 +45,7 @@ public class Controller {
     private Main main;
 
 
-    public Controller() {
+    public MainController() {
     }
 
 
@@ -63,6 +63,8 @@ public class Controller {
                 .addListener( (observable, x, y)
                         -> showPerson(y)
                 );
+
+
 
     }
 
@@ -93,14 +95,20 @@ public class Controller {
     }
 
     public void addPerson(ActionEvent actionEvent) throws IOException {
-        AnchorPane addPersonLayout = FXMLLoader.load(
-                getClass().getClassLoader().getResource("AddPerson.fxml")
-        );
+
+        FXMLLoader loader = new FXMLLoader(
+                (getClass().getClassLoader()
+                        .getResource("AddPerson.fxml")));
+
+        AnchorPane addPersonLayout = loader.load();
+
+        AddPersonController addPersonController = loader.getController();
+        addPersonController.setMain(main);
+
         Stage stage = new Stage();
         Scene scene = new Scene(addPersonLayout);
 
         stage.setScene(scene);
-
         stage.show();
     }
 
